@@ -1,0 +1,45 @@
+<html>
+<head>
+<title> Program-03 </title>
+<script>
+var font=0,loading;
+
+function start()
+{
+ loading=window.setInterval("inc()",100);
+}
+
+function inc()
+{
+ font=font+1;
+ dis.innerHTML="TEXT-GROWING: " + font + "pt";
+ dis.style.fontSize=font+"pt";
+ if(font>50)
+ {
+  window.clearTimeout(loading);
+  loading=window.setInterval("dec()",100);
+ }
+ dis.style.color="green";
+}
+
+function dec()
+{
+ font=font-1;
+ dis.innerHTML="TEXT-SHRINCKING: " + font + "pt";
+ dis.style.fontSize=font+"pt";
+ if(font<5)
+ {
+  window.clearTimeout(loading);
+  loading=window.setInterval("inc()",100);
+ }
+ dis.style.color="red";
+}
+</script>
+<body onload="start()">
+<center>
+<h1 style="color:red;">Program - 03 </h1>
+<hr color="blue">
+<p style="margin-top:250px;" id="dis"> </p>
+</body>
+</head>
+</html>
