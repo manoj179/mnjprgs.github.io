@@ -19,7 +19,7 @@ function inc()
   window.clearTimeout(loading);
   loading=window.setInterval("dec()",100);
  }
- dis.style.color="green";
+ dis.style.color="red";
 }
 
 function dec()
@@ -32,7 +32,7 @@ function dec()
   window.clearTimeout(loading);
   loading=window.setInterval("inc()",100);
  }
- dis.style.color="red";
+ dis.style.color="blue";
 }
 </script>
 <body onload="start()">
