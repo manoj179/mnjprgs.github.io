@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Program-04</title>
+
+<style type="text/css">
+	#txt
+	{
+		width: 200px;
+		height: 30px;
+		border: solid 1px blue;
+		border-radius: 5px;
+		margin-bottom: 5px;
+	}
+	.btn
+	{
+		width: 80px;
+		height: 30px;
+		border: solid 1px blue;
+		border-radius: 5px;
+	}
+	.btn:hover
+	{
+		width: 150px;
+		height: 30px;
+		border-radius: 5px;
+	}
+	#main
+	{
+		width: 20%;
+		border: solid 1px gray;
+		border-radius: 5px;
+		background-color: white;
+		margin-top: 30px;
+	}
+</style>
+<script type="text/javascript">
+	function check() 
+	{
+		var str=document.getElementById('txt').value;
+
+		if(Number.isInteger(parseInt(str)))
+		{
+			var num=parseInt(str);
+			var rem,rev=0;
+			
+			while(num>0)
+			{
+				rem=parseInt(num%10);
+				rev=rev*10+rem;
+				num=parseInt(num/10);
+			}
+			res.innerHTML="Given Integer is: <strong>" + str + "</strong><br/> Reverse of a Integer is: <strong>"+ rev + "</strong>";
+		}
+		else
+		{
+			var str=document.getElementById('txt').value;
+			var n=str.length;
+			for(var i=0; i<n; i++)
+			{
+				if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u' || str.charAt(i)=='A' || str.charAt(i)=='E' || str.charAt(i)=='I' || str.charAt(i)=='O' || str.charAt(i)=='U')
+				{
+					res.innerHTML="Given String is: <strong>"+str+"</strong><br/> Left-Most Vowel is: <strong>"+str.charAt(i)+"</strong><br/> Position of the Vowel is: <strong>"+(i+1) +"</strong>";
+					break;
+				}
+				else
+					res.innerHTML="There is no Vowels in this string!!";
+			}
+		}
+		
+	}
+</script>
+</head>
+<body bgcolor="#dfebf1b3">
+	<center>
+		<h1 color="red"> Program-04 </h1>
+		<hr color="blue"/>
+		<div>
+			<input type="text" id="txt" placeholder="Integer/String"/><br/>
+			<input type="button" class="btn" name="btn-res" onclick="check()" value="Submit"/>
+		</div>
+		<div id="main">
+			<p id="res" style="letter-spacing: 2px;"></p>
+		</div>
+	</center>
+</body>
+</html>
